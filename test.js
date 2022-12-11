@@ -17,4 +17,10 @@ sayEmployeeName()
 
 // this now works in the setTimeout as we have bound the 
 // `this` object to the employee within this global context function
-setTimeout(sayEmployeeName, 1500);
+setTimeout(sayEmployeeName, 10000);
+
+// you can also bind directly, rather than going through another function assignment
+const sayOccupation =  employee.sayOccupation.bind(employee)
+
+// this will output after 1 second using the context of the employee object. 
+setTimeout(sayOccupation, 1000);
